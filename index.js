@@ -11,6 +11,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Server is running...");
 });
+
 const uri =
   "mongodb+srv://money-calculate:qjNlBN6csYLxJYJg@cluster0.g0lqeq6.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, {
