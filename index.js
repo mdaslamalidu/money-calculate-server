@@ -8,6 +8,9 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Server is running...");
+});
 const uri =
   "mongodb+srv://money-calculate:qjNlBN6csYLxJYJg@cluster0.g0lqeq6.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, {
@@ -93,10 +96,6 @@ async function run() {
 }
 
 run().catch((err) => console.log(err));
-
-app.get("/", (req, res) => {
-  res.send("Server is running...");
-});
 
 app.listen(port, () => {
   console.log(`Server is running...on ${port}`);
